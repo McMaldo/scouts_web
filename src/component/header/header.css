@@ -6,7 +6,7 @@ header{
     height: 3rem;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
     backdrop-filter: blur(16px);
 }
 .headerContent{
@@ -47,4 +47,18 @@ header nav a{
 }
 header nav a:hover{
     background: var(--bg-color-tag);
+}
+@media(max-width: 768px){
+    header{
+        height: 6rem;
+    }
+    .headerContent{
+        flex-direction: column;
+    }
+    header .logo{
+        height: 20%;
+    }
+    header nav{
+        height: 80%;
+    }
 }
