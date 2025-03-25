@@ -1,7 +1,60 @@
 import React from "react";
 import style from "./home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
+
+	let recursos = [
+		{title:"Reglamento", items:[
+			{
+				title:"Reglamentos de sección, adiestramiento, Capellanía, uniformes e insignias", 
+				url:"https://drive.google.com/drive/folders/1q4MNqmanQ3gz205zQPg1vnAShwL9etfV"
+			},
+			{
+				title:"Estatutos y P.O.R", 
+				url:"https://drive.google.com/drive/folders/14kNVwM5WZOk7YOq28TQdjQvT_6gJMVwj?usp=sharing"
+			}
+		]},
+		{title:"Seguro", items:[
+			{
+				title:"Instructivo", 
+				url:"https://drive.google.com/file/d/19e1yvU6FsiJV6HkeDlZZJHpwLkfVOnuU/view?usp=sharing"
+			},
+			{
+				title:"Acta de accidente", 
+				url:"https://drive.google.com/file/d/1_hBwPC-11RWqBmCJM2lomOWwQmx813a_/view?usp=sharing"
+			}
+		]},
+		{title:"Afiliaciones", items:[
+			{
+				title:"Fichas de afiliación de grupo Scout", 
+				url:"https://drive.google.com/drive/folders/1JZD3E3Ubf4xPcRPXTiQtoKJfSssDf1tq?usp=sharing"
+			},
+			{
+				title:"Fichas internas de grupo", 
+				url:"https://drive.google.com/drive/folders/1eXR5t1Bhe2LOYdGqA3Ih0vk3BbxzKbBT?usp=sharing"
+			},
+			{
+				title:"Fichas de acampe", 
+				url:"https://drive.google.com/drive/u/1/folders/1vHNuNIbpuUfT4CvbkDAMCDCgkfWpDehW?q=sharedwith:public%20parent:1vHNuNIbpuUfT4CvbkDAMCDCgkfWpDehW"
+			}
+		]},
+		{title:"Biblioteca", items:[
+			{
+				title:"Libros Scouts", 
+				url:"https://drive.google.com/drive/folders/1PAeIHkxT0qbmLHALL6gS1bK1k_dGJrmx?usp=sharing"
+			}
+		]},
+		{title:"Cursos de Adiestramiento", items:[
+			{
+				title:"Circular 01/2025, Curso de Especialización", 
+				url:"https://drive.google.com/file/d/1yMYzVLdEEJEXajxuf2LyS0EMqlk7g573/view?usp=sharing"
+			}
+		]}
+	];
+
 	return(
 		<div className={style.mainContent}>
 			<section className={style.heading}>
@@ -74,8 +127,9 @@ export default function Home() {
 					</p>
 				</article>
 			</section>
-			<section className={style.ramas}>
+			<section className={style.ramas} id="ramas">
 				<h3>Ramas</h3>
+				<h4>Las secciones según la edad</h4>
 				<article>
 					<div>
 						<img src="/scouts_web/img/manada.png" alt="" />
@@ -128,7 +182,7 @@ export default function Home() {
 							El marco simbólico de la Aventura, fomenta la autonomía y
 							responsabilidad, mientras que los Raid permiten una
 							conexión espiritual con Dios y la naturaleza. Ellos
-							sonprotagonistas de su futuro, diseñando y ejecutando sus
+							son protagonistas de su futuro, diseñando y ejecutando sus
 							planes con supervisión mínima. Su lema: “Siempre listos
 							para salvar”.
 						</p>
@@ -151,6 +205,38 @@ export default function Home() {
 						responsabilidad.
 					</p>
 				</article>
+			</section>
+			<section className={style.recursos} id="recursos">
+				<h3>Recursos</h3>
+				<h4>Documentación para Grupos Scouts</h4>
+				<div className={style.recursosList}>
+					{recursos.map((recurso) => (
+						<article key={recurso.id}>
+							<h4>{recurso.title}</h4>
+							<ul>
+								{recurso.items.map((item) => (
+									<li>
+										<a href={item.url} target="_blank">
+											<span>{item.title}</span>
+											<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
+										</a>
+									</li>
+								))}
+							</ul>
+						</article>
+					))}
+				</div>
+			</section>
+			<section className={style.contactos} id="contactos">
+				<h3>Contactos y Redes Sociales</h3>
+				<div className={style.contactList}>
+					<a href="https://www.facebook.com/p/SCaDi-Z%C3%A1rate-Campana-100064750624311/?mibextid=ZbWKwL">
+						<FontAwesomeIcon icon={faFacebook}/>
+					</a>
+					<a href="https://www.youtube.com/@CanalScouttv">
+						<FontAwesomeIcon icon={faYoutube}/>
+					</a>
+				</div>
 			</section>
 		</div>
 	);

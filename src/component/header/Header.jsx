@@ -5,7 +5,7 @@ import { useTheme } from "../../hook/useTheme";
 export default function Header() {
 
 	const { theme } = useTheme();
-	const links = ["avisos", "quienes Somos", "ramas", "cursos", "contactos"];
+	const links = ["avisos", "quienes Somos", "ramas", "recursos", "contactos"];
 
 	const handleScroll = (event, id) => {
 		event.preventDefault();

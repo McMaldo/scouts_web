@@ -72,7 +72,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 .mainContent article{
     background: var(--bg-color-tag);
@@ -100,6 +100,37 @@
 .mainContent section.ramas article p{
     text-indent: 1rem;
 }
+.mainContent section.recursos .recursosList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+.mainContent section.recursos article ul{
+    padding-left: 2rem;
+}
+.mainContent section.recursos article ul a{
+    display: inline;
+}
+.mainContent section.recursos article ul svg{
+    margin: 0 0 2px .5rem;
+    height: .75rem;
+    width: .75rem;
+}
+.mainContent .contactList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    gap: 1rem;
+}
+.mainContent .contactList svg{
+    width: 4rem;
+    height: 4rem;
+    background: var(--bg-color-tag);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
 @media(max-width: 500px){
     .mainContent section.desc,
     .mainContent section.ramas article{
