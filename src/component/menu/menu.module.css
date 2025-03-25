@@ -14,26 +14,29 @@
     transition: all .3s ease-out;
     user-select: none;
 }
-.menu.openedCustomPanel{
+.menu.openedTopPanel{
     border-radius: 0;
 }
-.menu button{
+.menu .btnContainer{
+    z-index: 10;
     width: 2.5rem;
     aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
+    position: relative;
+}
+.menu .btnContainer:hover{
+    z-index: 9;
+}
+.menu button{
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.125rem;
     color: var(--icon-color);
     background: var(--bg-color-tag);
     border-radius: .5rem;
     transition: all .1s ease-out;
     cursor: pointer;
-}
-.menu button span{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
+    position: relative;
 }
 .menu button:hover{
     color: var(--font-color);
@@ -55,11 +58,11 @@
     background: var(--bg-color-button-red);
 }
 
-.customPanel{
+.selectorPanel{
     width: 10rem;
     position: absolute;
-    right: 100%;
-    top: -2px;
+    right: calc(100% + .5rem);
+    top: calc(-.5rem - 2px);
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -69,41 +72,67 @@
     border: 2px solid var(--main-color);
     border-right: 0;
 }
-.customPanel::after{
-    content: "";
+.selectorPanel .conector{
     width: .5rem;
     height: 100%;
     position: absolute;
     right: -.5rem;
     top: 0;
 }
-.customPanel .option{
+.selectorPanel .option{
+    z-index: 10;
     width: 100%;
-    height: fit-content;
+    height: 2.5rem;
     display: flex;
     flex-direction: column;
     border-radius: .5rem;
     background: var(--bg-color-tag);
     position: relative;
     padding: .5rem;
+    cursor: pointer;
 }
-.customPanel .option .desc,
-.customPanel .option .value{
+.selectorPanel .option .desc,
+.selectorPanel .option .value{
     width: 100%;
     text-align: start;
     text-transform: uppercase;
 }
-.customPanel .option .desc{
+.selectorPanel .option .desc{
     font-size: 10px;
     color: var(--font-color-soft);
+    position: absolute;
+    top: .25rem;
+    left: .5rem;
 }
-.customPanel .option .value{
+.selectorPanel .option .value{
     font-size: 1rem;
-    height: calc(100% - .75rem);
-    padding-left: .5rem;
-    user-select: all;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
-.customPanel .option .preview{
+.selectorPanel .option .value:nth-child(1){
+    color: var(--font-color-soft);
+    transition: all .2s;
+}
+.selectorPanel .option.selected .value{
+    color: var(--font-color);
+}
+.selectorPanel .option:hover .value:nth-child(1){
+    color: var(--font-color);
+}
+.selectorPanel .option .value:nth-child(2){
+    padding: .75rem 0 0 .5rem;
+}
+.selectorPanel .option .value img{
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: .5rem;
+}
+.selectorPanel .option .value span{
+    justify-content: start;
+}
+.selectorPanel .option .preview{
     height: calc(100% - 1rem);
     aspect-ratio: 3 / 2;
     top: .5rem;
@@ -112,35 +141,52 @@
     background: var(--bg-color);
     position: absolute;
 }
-.customPanel .option .preview,
-.customPanel .option .preview div{
+.selectorPanel .option .preview,
+.selectorPanel .option .preview div{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
 }
-.customPanel .option .preview div{
+.selectorPanel .option .preview div{
     position: relative;
     content: "";
     width: 100%;
     height: 100%;
     display: block;
 }
-.customPanel .option:hover{
+.selectorPanel .option:hover{
     box-shadow: var(--box-shadow-tag-hover);
 }
-.customPanel::before {
+.selectorPanel .option.selected::before{
     content: "";
+    width: 4px;
+    height: calc(100% - 1rem);
+    border-radius: 0 4px 4px 0;
+    background: var(--main-color);
     position: absolute;
+    top: .5rem;
+    left: 0;
+}
+.selectorPanel::after,
+.selectorPanel::before{
+    content: "";
     width: 1rem;
     height: 1rem;
     background: transparent;
-}
-.customPanel::before{
-    bottom: calc(-1rem - 2px);
-    right: 0;
     border: 2px solid var(--main-color);
+    position: absolute;
+    right: 0;
+}
+.selectorPanel::before{
+    bottom: calc(-1rem - 2px);
     border-width: 2px 2px 0 0;
     border-top-right-radius: .5rem;
     box-shadow: .5rem -.5rem 0 .5rem var(--bg-color);
 }
-.menu button:not(:first-child){
-    z-index: 10;
+.selectorPanel::after{
+    top: calc(-1rem - 2px);
+    border-width: 0 2px 2px 0;
+    border-bottom-right-radius: .5rem;
+    box-shadow: .5rem .5rem 0 .5rem var(--bg-color);
+}
+.menu.openedTopPanel .selectorPanel::after{
+    content: none;
 }
