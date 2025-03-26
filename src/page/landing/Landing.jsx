@@ -64,10 +64,10 @@ export default function Landing() {
 
 	return(
 		<div className={style.mainContent}>
-			<section className={style.heading}>
+			<div className={style.heading}>
 				<h1>ASOCIACIÓN SCOUT CATÓLICOS DIOCESANOS</h1>
 				<h2>ZARATE - CAMPANA</h2>
-			</section>
+			</div>
 			<section className={style.desc}>
 				<img src="https://scadi.my.canva.site/_assets/media/22d8d39640f880e5fa74fb0741e2d353.jpg" draggable="false"/>
 				<p>
@@ -80,27 +80,31 @@ export default function Landing() {
 			<section className={style.announcement} id="avisos">
 				<h3>Avisos</h3>
 				<table>
-					<tr>
-						<th>Fecha</th><th>Evento</th><th>Lugar</th>
-					</tr>
-					<tr>
-						<td>17-18 de Mayo</td><td>Curso Informativo</td><td>Baradero</td>
-					</tr>
-					<tr>
-						<td>22 de Junio, 9hs</td><td>Asamblea Asociativa</td><td>Derqui</td>
-					</tr>
-					<tr>
-						<td>5 de Julio</td><td>Fogata San Pablo</td><td>Savio</td>
-					</tr>
-					<tr>
-						<td>09-10 de Agosto</td><td>Campamento de Dirigentes</td><td>Baradero</td>
-					</tr>
-					<tr>
-						<td>11-12 de Octubre</td><td>Campamento Diocesano</td><td>A Confirmar</td>
-					</tr>
-					<tr>
-						<td>7-8 de Marzo de 2026</td><td>Asamblea Diocesana</td><td>Baradero</td>
-					</tr>
+					<thead>
+						<tr>
+							<th>Fecha</th><th>Evento</th><th>Lugar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>17-18 de Mayo</td><td>Curso Informativo</td><td>Baradero</td>
+						</tr>
+						<tr>
+							<td>22 de Junio, 9hs</td><td>Asamblea Asociativa</td><td>Derqui</td>
+						</tr>
+						<tr>
+							<td>5 de Julio</td><td>Fogata San Pablo</td><td>Savio</td>
+						</tr>
+						<tr>
+							<td>09-10 de Agosto</td><td>Campamento de Dirigentes</td><td>Baradero</td>
+						</tr>
+						<tr>
+							<td>11-12 de Octubre</td><td>Campamento Diocesano</td><td>A Confirmar</td>
+						</tr>
+						<tr>
+							<td>7-8 de Marzo de 2026</td><td>Asamblea Diocesana</td><td>Baradero</td>
+						</tr>
+					</tbody>
 				</table>
 			</section>
 			<section className={style.quienesSomos} id="quienesSomos">
@@ -217,12 +221,12 @@ export default function Landing() {
 				<h3>Recursos</h3>
 				<h4>Documentación para Grupos Scouts</h4>
 				<div className={style.recursosList}>
-					{recursos.map((recurso) => (
-						<article key={recurso.id}>
+					{recursos.map((recurso, recursoKey) => (
+						<article key={recursoKey}>
 							<h4>{recurso.title}</h4>
 							<ul>
-								{recurso.items.map((item) => (
-									<li>
+								{recurso.items.map((item, itemKey) => (
+									<li key={itemKey}>
 										<a href={item.url} target="_blank">
 											<span>{item.title}</span>
 											<FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
@@ -238,7 +242,7 @@ export default function Landing() {
 				<h3>Contactos y Redes Sociales</h3>
 				<div className={style.contactList}>
 					{contactList.map((contact, contactKey) => (
-						<a href={contact.link}  target="_blank" key={contactKey}>
+						<a href={contact.link} target="_blank" key={contactKey}>
 							<article>
 								<FontAwesomeIcon icon={contact.icon}/>
 								<div>

@@ -8,8 +8,7 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    background: var(--bg-color);
-    border: 1px solid var(--main-color);
+    background: linear-gradient(var(--bg-color) 95%, var(--bg));
     border-width: 0 2px;
 }
 .mainContent section{
@@ -18,7 +17,7 @@
     flex-direction: column;
     gap: 1rem;
 }
-.mainContent section.heading{
+.mainContent .heading{
     min-height: 6rem;
     display: flex;
     flex-direction: column;
@@ -30,7 +29,6 @@
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
-    gap: 1rem;
 }
 .mainContent section.desc img{
     width: 200px;
