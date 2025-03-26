@@ -44,6 +44,9 @@ main h3::before{
 	width: calc(100% + 4rem);
 	background: linear-gradient(90deg, var(--main-color) 80%, var(--bg-color));
 }
+main a{
+	color: var(--font-color-link);
+}
 .base{
 	color: var(--font-color);
 

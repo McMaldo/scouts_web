@@ -8,7 +8,8 @@ import './assets/vars.css';
 import MainLayout from "./layout/main/MainLayout";
 
 //Pages
-import Home from './page/Home/Home';
+import Home from './page/home/Home';
+import Landing from './page/landing/landing';
 import Error from './page/error/Error';
 
 createRoot(document.getElementById('root')).render(
@@ -16,7 +17,9 @@ createRoot(document.getElementById('root')).render(
 		<StrictMode>
 			<Routes>
 				<Route path="/scouts_web/" element={<MainLayout/>}>
-					<Route path="/scouts_web/" element={<Home/>}/>
+					<Route path="/scouts_web/" element={<Landing/>}/>
+					<Route path="/scouts_web/landing" element={<Landing/>}/>
+					<Route path="/scouts_web/home" element={<Home/>}/>
 				</Route>
 				<Route path='*' element={<Error/>}/>
 			</Routes>

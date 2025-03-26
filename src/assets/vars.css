@@ -1,5 +1,6 @@
 :root {
     --font-color: #222;
+    --font-color-link: #5050ff;
     --font-color-soft: #444;
     --icon-color: #666;
 
@@ -22,6 +23,7 @@
 
 [data-theme='dark']{
     --font-color: #ffffffde;
+    --font-color-link: #9e9eff;
     --font-color-soft: #888;
     --icon-color: #bbb;
 
@@ -47,6 +49,7 @@
 
 [data-theme='pinky']{
     --font-color: #222;
+    --font-color-link: #5050ff;
     --font-color-soft: #444;
     --icon-color: #666;
 
