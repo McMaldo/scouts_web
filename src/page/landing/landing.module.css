@@ -71,7 +71,7 @@
 }
 .mainContent article{
     background: var(--bg-color-tag);
-    border-radius: .5rem;
+    border-radius: 1rem;
     padding: 1rem;
     transition: all .2s;
 }
@@ -85,19 +85,80 @@
     align-items: center;
     gap: 1rem;
 }
-.mainContent section.ramas article div:first-child{
+.mainContent .navRamas{
+    width: fit-content;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--bg-color-tag);
+    border-radius: 1rem;
+    padding: .5rem;
+    transition: all .2s;
+}
+.mainContent .navRamas button{
+    background: var(--bg-color-tag);
+    border-radius: .5rem;
+    padding: .5rem;
+    transition: all .2s;
+}
+.mainContent .navRamas button:hover{
+    background: var(--bg-color-tag-light);
+}
+.mainContent section.ramas article{
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+    align-items: end;
 }
 .mainContent section.ramas article img{
     width: 8rem;
     height: 8rem;
     object-fit: contain;
     object-position: center;
+    border-radius: .75rem;
 }
 .mainContent section.ramas article p{
-    text-indent: 1rem;
+    text-indent: 1.5rem;
+}
+.mainContent section.ramas article .age{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--bg-color);
+    border-radius: 0 0 1rem 0;
+    padding: 1px .5rem .5rem 1px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.mainContent section.ramas article .age span{
+    z-index: 2;
+    position: relative;
+    background: var(--bg-color-tag);
+    border-radius: .75rem;
+    padding: .25rem .5rem;
+    text-align: center;
+}
+.mainContent section.ramas article .age span:nth-child(2){
+    text-transform: capitalize;
+}
+.mainContent section.ramas article .age::before,
+.mainContent section.ramas article .age::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border-top-left-radius: 1rem;
+    box-shadow: -.5rem -.5rem 0 .5rem var(--bg-color);
+}
+.mainContent section.ramas article .age::before{
+    bottom: -1rem;
+    left: 0;
+}
+.mainContent section.ramas article .age::after {
+    top: 0;
+    right: -1rem;
 }
 .mainContent section.recursos .recursosList{
     display: grid;
@@ -140,9 +201,12 @@
     height: 4rem;
 }
 
-@media(max-width: 500px){
+@media(max-width: 550px){
     .mainContent section.desc,
     .mainContent section.ramas article{
         flex-direction: column;
+    }
+    .mainContent section.ramas article{
+        align-items: center;
     }
 }

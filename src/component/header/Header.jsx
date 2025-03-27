@@ -1,19 +1,12 @@
 import React from "react";
 import "./header.css";
 import { useTheme } from "../../hook/useTheme";
+import { handleScroll } from "../../utils/handleScroll";
 
 export default function Header() {
 
 	const { theme } = useTheme();
 	const links = ["avisos", "quienes Somos", "ramas", "recursos", "contactos"];
-
-	const handleScroll = (event, id) => {
-		event.preventDefault();
-		const element = document.getElementById(id);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
-	};
 
 	return (
 		<header>
