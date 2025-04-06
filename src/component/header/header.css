@@ -15,12 +15,16 @@ header{
     height: 100%;
     max-width: 1080px;
     padding: .5rem 1rem;
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+        "logo nav menu";
+    grid-template-rows: 100%;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
 }
 header .logo{
+    grid-area: logo;
     height: 100%;
     display: flex;
     align-items: center;
@@ -33,6 +37,7 @@ header .logo img.dark{
     filter: invert(1);
 }
 header nav{
+    grid-area: nav;
     height: 100%;
     display: flex;
 }
@@ -46,20 +51,41 @@ header nav a{
     text-transform: capitalize;
     transition: all .2s;
 }
-header nav a:hover{
-    background: var(--bg-color-tag);
+header button.menu{
+    grid-area: menu;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: .5rem;
+    background: transparent;
 }
+header button.menu svg{
+    width: 1.125rem;
+    height: 1.125rem;
+}
+header nav a:hover,
+header button.menu:hover{
+    background: var(--bg-color-tag);
+    cursor: pointer;
+}
+
 @media(max-width: 768px){
     header{
         height: 6rem;
     }
     .headerContent{
-        flex-direction: column;
-    }
-    header .logo{
-        height: 20%;
+        grid-template-areas: 
+            "logo menu"
+            "nav nav";
+        grid-template-rows: repeat(2, calc(50% - .25rem));
+        row-gap: .5rem;
     }
     header nav{
-        height: 80%;
+        justify-self: center;
+    }
+    header nav a{
+        padding: 0 .5rem;
+    }
+    header button.menu{
+        justify-self: end;
     }
 }

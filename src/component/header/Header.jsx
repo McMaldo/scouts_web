@@ -2,11 +2,13 @@ import React from "react";
 import "./header.css";
 import { useTheme } from "../../hook/useTheme";
 import { handleScroll } from "../../utils/handleScroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
 
 	const { theme } = useTheme();
-	const links = ["avisos", "quienes Somos", "ramas", "recursos", "contactos"];
+	const links = ["avisos", "nosotros", "ramas", "recursos", "contactos"];
 
 	return (
 		<header>
@@ -30,6 +32,9 @@ export default function Header() {
 						);
 					})}
 				</nav>
+				<button className="menu">
+					<FontAwesomeIcon icon={faBars}/>
+				</button>
 			</div>
 		</header>
 	);

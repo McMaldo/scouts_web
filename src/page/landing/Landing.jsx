@@ -133,7 +133,7 @@ export default function Landing() {
 					</tbody>
 				</table>
 			</section>
-			<section className={style.quienesSomos} id="quienesSomos">
+			<section className={style.quienesSomos} id="nosotros">
 				<h3>¿Quiénes somos?</h3>
 				<article>
 					<p>
