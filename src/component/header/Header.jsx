@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import { useTheme } from "../../hook/useTheme";
 import { handleScroll } from "../../utils/handleScroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Sidebar from "../sidebar/Sidebar";
 
 export default function Header() {
 
 	const { theme } = useTheme();
 	const links = ["avisos", "nosotros", "ramas", "recursos", "contactos"];
+	const [ isSidebarOpened, setIsSidebarOpened ] = useState(false);
 
 	return (
+		<>
 		<header>
 			<div className="headerContent">
 				<div className="logo">
@@ -32,10 +35,15 @@ export default function Header() {
 						);
 					})}
 				</nav>
-				<button className="menu">
+				<button className="menu" onClick={() => setIsSidebarOpened(true)}>
 					<FontAwesomeIcon icon={faBars}/>
 				</button>
 			</div>
 		</header>
+		<Sidebar 
+            isSidebarOpened={isSidebarOpened}
+            setIsSidebarOpened={setIsSidebarOpened}
+        />
+        </>
 	);
 }
