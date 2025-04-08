@@ -10,6 +10,8 @@ import MainLayout from "./layout/main/MainLayout";
 //Pages
 import Home from './page/home/Home';
 import Landing from './page/landing/Landing';
+import Calendar from './page/calendar/Calendar';
+import Rover from './page/rover/Rover';
 import Error from './page/error/Error';
 
 createRoot(document.getElementById('root')).render(
@@ -20,6 +22,8 @@ createRoot(document.getElementById('root')).render(
 					<Route path="/scouts_web/" element={<Landing/>}/>
 					<Route path="/scouts_web/landing" element={<Landing/>}/>
 					<Route path="/scouts_web/home" element={<Home/>}/>
+					<Route path="/scouts_web/calendario" element={<Calendar/>}/>
+					<Route path="/scouts_web/rover" element={<Rover/>}/>
 				</Route>
 				<Route path='*' element={<Error/>}/>
 			</Routes>
