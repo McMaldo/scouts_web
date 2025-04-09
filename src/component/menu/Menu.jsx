@@ -5,30 +5,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCake, faMoon, faPalette, faSun, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from "../../hook/useTheme";
 
-function extractCssVarValue(cssVar) {
-	let base = document.querySelector("#root .base");
-	let baseStyles = getComputedStyle(base);
-	return baseStyles.getPropertyValue(cssVar);
-}
+// function extractCssVarValue(cssVar) {
+// 	let base = document.querySelector("#root .base");
+// 	let baseStyles = getComputedStyle(base);
+// 	return baseStyles.getPropertyValue(cssVar);
+// }
 
-function PalettePanel(){
-	let palette = ["main", "font", "bg"];
+// function PalettePanel(){
+// 	let palette = ["main", "font", "bg"];
 
-	return(
-		<div className={s.selectorPanel}>
-			{palette.map((paletteColor, paletteColorKey) => (
-				<div className={s.option} key={paletteColorKey}>
-					<div className={s.desc}>{paletteColor}</div>
-					<div className={s.value}>{extractCssVarValue(`--${paletteColor}-color`)}</div>
-					<div className={s.preview}>
-						<div style={{background: `var(--${paletteColor}-color)`}}></div>
-					</div>
-				</div>
-			))}
-			<div className={s.conector}></div>
-		</div>
-	)
-}
+// 	return(
+// 		<div className={s.selectorPanel}>
+// 			{palette.map((paletteColor, paletteColorKey) => (
+// 				<div className={s.option} key={paletteColorKey}>
+// 					<div className={s.desc}>{paletteColor}</div>
+// 					<div className={s.value}>{extractCssVarValue(`--${paletteColor}-color`)}</div>
+// 					<div className={s.preview}>
+// 						<div style={{background: `var(--${paletteColor}-color)`}}></div>
+// 					</div>
+// 				</div>
+// 			))}
+// 			<div className={s.conector}></div>
+// 		</div>
+// 	)
+// }
 function ThemePanel({themeIcons}){
 	let themeList = ["dark", "light", "pinky"];
 	let { theme, setTheme } = useTheme();
@@ -92,9 +92,9 @@ export default function Menu() {
 	let [isTranslatedToEnglish, setTranslatedToEnglish] = useLocalStorage("translatedToEnglish", true);
 
 	return(
-		<div className={s.menu+" "+(panelOpened == "palette" && s.openedTopPanel)}>
+		<div className={s.menu+" "+(panelOpened == "theme" && s.openedTopPanel)}>
 			{isExpanded && (<>
-				<div 
+				{/* <div 
 					className={s.btnContainer}
 					onMouseEnter={() => setPanelOpened("palette")}
 					onMouseLeave={() => setPanelOpened("")}
@@ -103,7 +103,7 @@ export default function Menu() {
 					<button onClick={() => setPanelOpened("")}>
 						<FontAwesomeIcon icon={faPalette}/>
 					</button>
-				</div>
+				</div> */}
 				<div 
 					className={s.btnContainer} 
 					onMouseEnter={() => setPanelOpened("theme")}

@@ -18,7 +18,7 @@ export default function Sidebar({ isSidebarOpened, setIsSidebarOpened }) {
 				className="close"
 				onClick={() => setIsSidebarOpened(false)}
 			/>
-			<Link to="/scouts_web/">
+			<Link to="/scouts_web">
 				<FontAwesomeIcon icon={faHome}/> Inicio
 			</Link>
 			<Link to="/scouts_web/calendario">

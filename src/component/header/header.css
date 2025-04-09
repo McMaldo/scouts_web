@@ -69,23 +69,23 @@ header button.menu:hover{
 }
 
 @media(max-width: 768px){
-    header{
+    header.withNav{
         height: 6rem;
     }
-    .headerContent{
+    header.withNav .headerContent{
         grid-template-areas: 
             "logo menu"
             "nav nav";
         grid-template-rows: repeat(2, calc(50% - .25rem));
         row-gap: .5rem;
     }
-    header nav{
+    header.withNav nav{
         justify-self: center;
     }
-    header nav a{
+    header.withNav nav a{
         padding: 0 .5rem;
     }
-    header button.menu{
+    header.withNav button.menu{
         justify-self: end;
     }
 }
