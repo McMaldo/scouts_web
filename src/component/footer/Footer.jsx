@@ -41,6 +41,7 @@ export default function Footer() {
 					<a href="https://usehooks.com/">useHooks (React library)</a>
 					<a href="https://kasela.com.ar/us/Landing">Kasela (life time counter)</a>
 					<a href="https://fontawesome.com/">FontAwesome (icons)</a>
+					<a href="https://ant.design/components/calendar">Ant Design (Calendar)</a>
 				</div>
 				<div className="tech group center">
 					<h3>Tech Stack</h3>

@@ -17,10 +17,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@uidotdev/usehooks": "^2.4.1",
+    "antd": "^5.24.6",
     "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.4.0"
+    "react-router-dom": "^7.4.0",
+    "rsuite": "^5.79.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
