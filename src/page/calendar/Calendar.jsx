@@ -83,7 +83,7 @@ const CalendarRender = () => {
 
 export default function Calendar() {
 	return (
-		<div className={style.mainContent}>
+		<div className={style.calendar}>
 			<h2>Calendario de Grupo</h2>
 			<CalendarRender />
 		</div>

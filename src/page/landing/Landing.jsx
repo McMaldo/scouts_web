@@ -89,7 +89,7 @@ export default function Landing() {
 	]
 
 	return(
-		<div className={style.mainContent}>
+		<div className={style.landingPage}>
 			<div className={style.heading}>
 				<h1>ASOCIACIÓN SCOUT CATÓLICOS DIOCESANOS</h1>
 				<h2>ZARATE - CAMPANA</h2>

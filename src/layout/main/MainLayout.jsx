@@ -23,7 +23,9 @@ export default function MainLayout() {
 				setIsSidebarOpened={setIsSidebarOpened}
 			/>
 			<main>
-				<Outlet/>
+				<div className="mainContent">
+					<Outlet/>
+				</div>
 			</main>
 			<Footer/>
 			<Menu/>
