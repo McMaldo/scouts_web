@@ -1,0 +1,49 @@
+.loadingContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: .5rem;
+}
+.loading{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.loading svg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.loading svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--bg);
+    stroke-width: .75rem;
+    stroke-dasharray: 100 100;
+    transform: rotate(-90deg);
+    transform-origin: 50%;
+}
+.loading svg circle:nth-child(2){
+    stroke: var(--main-color);
+    stroke-width: .5rem;
+    animation: loadingAnimation 1.25s linear infinite;
+}
+@keyframes loadingAnimation{
+    0%{
+        transform: rotate(0deg);
+        stroke-dashoffset: 85;
+    }
+    75%{
+        transform: rotate(270deg);
+        stroke-dashoffset: 70;
+    }
+    100%{
+        transform: rotate(360deg);
+        stroke-dashoffset: 85;
+    }
+}

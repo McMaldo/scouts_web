@@ -1,7 +1,9 @@
 import React from 'react';
 import style from './calendar.module.css';
 import { useTheme } from "../../hook/useTheme";
-import { Badge, Calendar as CalendarAntd, theme as antdTheme } from 'antd';
+import Badge from 'antd/es/badge';
+import { default as CalendarAntd } from 'antd/es/calendar';
+import { default as antdTheme } from 'antd/es/theme';
 
 const getListData = value => {
 	let listData = []; // Specify the type of listData
