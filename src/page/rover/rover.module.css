@@ -11,13 +11,102 @@
 	color: inherit;
 	cursor: pointer;
 }
+.rover .project{
+	display: flex;
+	flex-direction: column;
+	gap: .75rem;
+}
+.rover .project article{
+	width: 100%;
+	padding: .5rem;
+	background: var(--bg-color-tag);
+	border-radius: .5rem;
+	position: relative;
+}
+.rover .project article span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px .25rem 2px 0;
+	font-size: .75rem;
+	color: var(--font-color-soft);
+	background: var(--bg-color);
+	border-radius: 0 0 .5rem 0;
+}
+.rover .project .title{
+	text-align: center;
+	font-size: 2rem;
+}
+.rover .project .desc{
+	padding: 1.5rem .5rem .5rem .5rem;
+}
+.rover .project .stepList{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	gap: .75rem;
+}
+@media(max-width: 500px){
+	.rover .project .stepList{
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	}
+}
+.rover .project .stepList .step{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.rover .project .stepList .step ul{
+	padding-left: 1.25rem;
+	justify-self: end;
+}
+.rover .project .stepList .stepNumber{
+	width: 3rem;
+	height: 3rem;
+	display: grid;
+	place-items: center;
+	font-size: 1.5rem;
+	border-radius: 50%;
+	background: var(--main-color);
+}
+.rover .project .stepList .step p{
+	text-align: center;
+}
+
+.rover .actList{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+.rover .actList .mounth{
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+}
+.rover .actList .mounth .act{
+	display: flex;
+	gap: .125rem;
+}
+.rover .actList .mounth .act div{
+	display: flex;
+	justify-content: center;
+	background: var(--bg-color-tag);
+	padding: 0 .25rem;
+}
+.rover .actList .mounth .act .date{
+	border-radius: .5rem 0 0 .5rem;
+}
+.rover .actList .mounth .act .desc{
+	border-radius: 0 .5rem .5rem 0;
+}
+
 .rover .bento{
 	width: 100%;
 	aspect-ratio: 2 / 1;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	gap: .5rem;
+	gap: .75rem;
 	margin: .5rem 0;
 }
 .rover .bento article{
@@ -82,4 +171,8 @@
 .rover .bento.model_4x3 :nth-child(5){
 	grid-column: span 1;
 	grid-row: span 1;
+	display: grid;
+	place-items: center;
+	color: var(--font-color-soft);
+	font-size: 1.25rem;
 }

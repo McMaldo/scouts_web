@@ -74,7 +74,7 @@ const CalendarRender = () => {
 		theme={theme == "dark" ? {
 			algorithm: antdTheme.darkAlgorithm,
 			token: {
-				colorBgContainer: '#0000',
+				colorBgContainer: '#13131a',
 				colorTextBase: '#fff',
 			},
 		} : undefined}
