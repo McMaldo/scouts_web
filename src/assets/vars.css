@@ -19,6 +19,7 @@
     --main-color: #6F2CE3;
     --main-color-soft: #ae8ded;
     --main-color-medium: #ae8ded;
+    --green-tree: #87ff91;
 }
 
 [data-theme='dark']{
@@ -45,6 +46,7 @@
     --main-color: #6F2CE3;
     --main-color-soft: #2F145E;
     --main-color-medium: #341668;
+    --green-tree: #0d3e11;
 }
 
 [data-theme='pinky']{
@@ -68,4 +70,5 @@
     --main-color: #ff89ee;
     --main-color-soft: #ffd0d7;
     --main-color-medium: #ffcdd8;
+    --green-tree: #a3f8aa;
 }

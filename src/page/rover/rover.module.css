@@ -76,25 +76,38 @@
 .rover .actList{
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	gap: .25rem;
 }
 .rover .actList .mounth{
 	display: flex;
 	flex-direction: column;
+	padding: .25rem;
 	gap: .5rem;
+	border: 1px solid var(--bg-color-tag);
+	border-radius: .5rem;
+}
+.rover .actList .mounth :first-child{
+	color: var(--font-color-soft);
+	padding-left: .25rem;
 }
 .rover .actList .mounth .act{
+	width: 100%;
 	display: flex;
 	gap: .125rem;
 }
 .rover .actList .mounth .act div{
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	background: var(--bg-color-tag);
 	padding: 0 .25rem;
 }
 .rover .actList .mounth .act .date{
 	border-radius: .5rem 0 0 .5rem;
+}
+.rover .actList .mounth .act.trees .date{
+	background: var(--green-tree);
 }
 .rover .actList .mounth .act .desc{
 	border-radius: 0 .5rem .5rem 0;
@@ -107,7 +120,7 @@
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	gap: .75rem;
-	margin: .5rem 0;
+	margin: 1rem 0;
 }
 .rover .bento article{
 	background: var(--bg-color-tag);

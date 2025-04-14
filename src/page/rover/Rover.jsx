@@ -17,21 +17,49 @@ export default function Rover() {
 		{mounth: "Abril", acts: [
 			{date:"05",desc:"Presentación"},
 			{date:"12-13",desc:"Acantonamiento"},
-			{date:"17-20",desc:"Semana Santa"}
+			{date:"17-20",desc:"Semana Santa"},
+			{date:"26",desc:"Identificación de árboles",project:true}
 		]},
 		{mounth: "Mayo", acts: [
-			{date:"03",desc:"Planetario"},
+			{date:"03",desc:"Planetario y Ecoparque"},
 			{date:"10",desc:"Servicio a Manada"},
-			{date:"25",desc:"Mesa Dulce"}
+			{date:"25",desc:"Venta de Mesa Dulce"}
 		]},
-		{mounth: "Junio", acts: []},
-		{mounth: "Julio", acts: []},
-		{mounth: "Agosto", acts: []},
-		{mounth: "Septiembre", acts: []},
-		{mounth: "Octubre", acts: []},
-		{mounth: "Noviembre", acts: []},
-		{mounth: "Diciembre", acts: []},
-		{mounth: "Enero 2026", acts: []}
+		{mounth: "Junio", acts: [
+			{date:"x",desc:"Limpieza de Plazas",project:true},
+			{date:"x",desc:"Recolección de árboles",project:true},
+			{date:"20",desc:'"Visita Monumento de la Bandera"'},
+			{date:"28-29",desc:'Campamento "Vuelta de Obligado"'}
+		]},
+		{mounth: "Julio", acts: [
+			{date:"05",desc:"Fogata de San Pablo"},
+			{date:"09",desc:"Venta de Mesa Dulce"},
+			{date:"19-20",desc:"Campamento de Grupo"},
+			{date:"x",desc:"Preparación del Suelo",project:true}
+		]},
+		{mounth: "Agosto", acts: [
+			{date:"x",desc:"Preparación del Suelo",project:true},
+			{date:"x",desc:"Plantación de árboles",project:true},
+			{date:"16",desc:"Día del Niño"}
+		]},
+		{mounth: "Septiembre", acts: [
+			{date:"05",desc:"Reformulación de Promesa"},
+			{date:"13",desc:"Olimpiadas Rover"},
+			{date:"x",desc:"Noche de los Museos"}
+		]},
+		{mounth: "Octubre", acts: [
+			{date:"11-12",desc:"Campamento Diocesano"}
+		]},
+		{mounth: "Noviembre", acts: [
+			{date:"01-02",desc:"Peregrenación a Lujan"},
+			{date:"22-23",desc:"Campamento de Técnica"}
+		]},
+		{mounth: "Diciembre", acts: [
+			{date:"08",desc:"Día de Inmaculada Concepción"}
+		]},
+		{mounth: "Enero 2026", acts: [
+			{date:"x",desc:"Campamento Anual"}
+		]}
 	];
 
 	return (
@@ -90,7 +118,7 @@ export default function Rover() {
 						<div className={s.mounth} key={mounthKey}>
 							<article>{mounth.mounth}</article>
 							{mounth.acts.map((act, actKey) => (
-								<article className={s.act} key={actKey}>
+								<article className={s.act + (act.project? " "+s.trees : "")} key={actKey}>
 									<div className={s.date}>{act.date}</div>
 									<div className={s.desc}>{act.desc}</div>
 								</article>
