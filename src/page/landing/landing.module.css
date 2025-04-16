@@ -22,13 +22,12 @@
     padding: 1rem 0;
 }
 .landingPage section.desc img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 .landingPage section.desc p{
     width: 100%;
-    max-width: 300px;
-    text-align: justify;
+    max-width: 250px;
 }
 .landingPage section.announcement,
 .landingPage section.quienesSomos{
@@ -90,6 +89,7 @@
     background: var(--bg-color-tag);
     border-radius: .5rem;
     padding: .5rem;
+    cursor: pointer;
     transition: all .2s;
 }
 .landingPage .navRamas button:hover{
@@ -193,7 +193,6 @@
 }
 
 @media(max-width: 550px){
-    .landingPage section.desc,
     .landingPage section.ramas article{
         flex-direction: column;
     }

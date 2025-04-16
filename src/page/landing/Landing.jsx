@@ -98,9 +98,9 @@ export default function Landing() {
 				<img src="/scouts_web/img/rama/scout.webp" draggable="false"/>
 				<p>
 					"En S.CA.DI, formamos corazones y mentes al servicio del bien, guiando a niños y 
-					jóvenes en el camino del amor a Dios, a la Patria, al Hogar y al Prójimo, 
-					siguiendo el Método Scout de Baden-Powell y los principios de la Iglesia Católica, 
-					para construir un mundo mejor en fe, servicio y fraternidad."
+					jóvenes en el camino del amor a Dios, a la Patria, al Hogar y al Prójimo"
+					{/* siguiendo el Método Scout de Baden-Powell y los principios de la Iglesia Católica, 
+					para construir un mundo mejor en fe, servicio y fraternidad." */}
 				</p>
 			</section>
 			<section className={style.announcement} id="avisos">

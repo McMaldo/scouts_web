@@ -138,6 +138,8 @@
 
 .rover .bento{
 	width: 100%;
+	max-width: 600px;
+	align-self: center;
 	aspect-ratio: 2 / 1;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -210,5 +212,12 @@
 	display: grid;
 	place-items: center;
 	color: var(--font-color-soft);
-	font-size: 1.25rem;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+.rover .bento.model_4x3 :nth-child(5) svg{
+	transition: padding .2s;
+}
+.rover .bento.model_4x3 :nth-child(5):hover svg{
+	padding-left: 1rem;
 }
