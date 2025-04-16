@@ -1,8 +1,12 @@
+.landingPage,
 .landingPage section{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+.landingPage{
+    gap: 1.5rem;
 }
 .landingPage .heading{
     min-height: 6rem;

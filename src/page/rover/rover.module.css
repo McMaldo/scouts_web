@@ -22,16 +22,39 @@
 	background: var(--bg-color-tag);
 	border-radius: .5rem;
 	position: relative;
+	overflow: hidden;
 }
-.rover .project article span{
+.rover .project article .cornerDesc{
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 2px .25rem 2px 0;
+	padding: 0 4px 3px 0;
 	font-size: .75rem;
 	color: var(--font-color-soft);
 	background: var(--bg-color);
 	border-radius: 0 0 .5rem 0;
+}
+.rover .project article .cornerDesc span{
+	z-index: 2;
+	position: relative;
+}
+.rover .project article .cornerDesc::before,
+.rover .project article .cornerDesc::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border-top-left-radius: 1rem;
+    box-shadow: -.5rem -.5rem 0 .5rem var(--bg-color);
+}
+.rover .project article .cornerDesc::before{
+    bottom: -1rem;
+    left: 0;
+}
+.rover .project article .cornerDesc::after {
+    top: 0;
+    right: -1rem;
 }
 .rover .project .title{
 	text-align: center;

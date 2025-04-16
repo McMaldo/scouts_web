@@ -20,13 +20,12 @@ header{
     grid-template-areas: 
         "logo nav menu";
     grid-template-rows: 100%;
-    align-items: center;
     justify-content: space-between;
     gap: 1rem;
 }
 header .logo{
     grid-area: logo;
-    height: 100%;
+    height: 2rem;
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -40,7 +39,6 @@ header .logo img.dark{
 }
 header nav{
     grid-area: nav;
-    height: 100%;
     display: flex;
 }
 header nav a{

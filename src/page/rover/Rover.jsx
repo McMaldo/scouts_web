@@ -1,11 +1,9 @@
 import React from 'react';
 import s from './rover.module.css';
-import { handleScroll } from "../../utils/handleScroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Rover() {
-	const links = ["Proyecto Comunitario", "Lista de Actividades", "Libro de Oro"];
 	const stepList = [
 		"Identificación de árboles en el campo (Abril)",
 		"Limpieza del área alrededor de las plazas (Junio)",
@@ -66,28 +64,19 @@ export default function Rover() {
 		<div className={s.rover}>
 			<section>
 				<h2>Sección Rover</h2>
-				<ul>
-					{links.map((link, index) => {
-						const id = link.replace(/\s+/g, '');
-
-						return (
-							<li key={index}>
-								<a href={"#"+id} onClick={(event) => handleScroll(event, id)}>
-									{link}
-								</a>
-							</li>
-						);
-					})}
-				</ul>
 			</section>
-			<section id="ProyectoComunitario" className={s.project}>
+			<section id="Proyecto" className={s.project}>
 				<h3>Proyecto Comunitario</h3>
 				<article className={s.title}>
-					<span>Título</span>
+					<div className={s.cornerDesc}>
+						<span>Título</span>
+					</div>
 					<p>Ese Árbol era mi Lujo</p>
 				</article>
 				<article className={s.desc}>
-					<span>Descripción</span>
+					<div className={s.cornerDesc}>
+						<span>Descripción</span>
+					</div>
 					<p>
 						Nuestro proyecto tiene como objetivo la recuperación y embellecimiento de espacios 
 						verdes en nuestra ciudad. Consiste en la limpieza de plazas y sus alrededores, 
@@ -111,7 +100,7 @@ export default function Rover() {
 					))}
 				</div>
 			</section>
-			<section id="ListadeActividades">
+			<section id="Actividades">
 				<h3>Lista de Actividades</h3>
 				<div className={s.actList}>
 					{actList.map((mounth, mounthKey) => (

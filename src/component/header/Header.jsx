@@ -9,21 +9,25 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 export default function Header({ setIsSidebarOpened }) {
 
 	const { theme } = useTheme();
-	const links = ["avisos", "nosotros", "ramas", "recursos", "contactos"];
+	const links = {
+		landing: ["avisos", "nosotros", "ramas", "recursos", "contactos"],
+		rover: ["Proyecto", "Actividades", "Libro de Oro"]
+	};
 	const { pathname } = useLocation();
 	const isLandingPage = (pathname == "/scouts_web" | pathname == "/scouts_web/");
+	const isRoverPage = (pathname == "/scouts_web/rover" | pathname == "/scouts_web/rover/");
 
 	return (
 		<>
-		<header className={isLandingPage ? "withNav" : "noNav"}>
+		<header className={isLandingPage | isRoverPage ? "withNav" : "noNav"}>
 			<div className="headerContent">
 				<div className="logo">
 					<img src="/scouts_web/img/Fleur-de-lis.svg" alt="" className={theme=="dark"? "dark" : ""} />
 					<span>Scouts Web</span>
 				</div>
-				{isLandingPage ?
+				{isLandingPage | isRoverPage?
 					<nav>
-						{links.map((link, index) => {
+						{(isLandingPage? links.landing : links.rover).map((link, index) => {
 							const id = link.replace(/\s+/g, '');
 							
 							return (
