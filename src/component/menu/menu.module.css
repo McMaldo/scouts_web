@@ -1,79 +1,29 @@
-.menu{
-    z-index: 9;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-    gap: .5rem;
-    border-radius: 1rem 0 0 0;
-    border: 2px solid var(--main-color);
-    border-width: 2px 0 0 2px;
-    background: var(--bg-color);
-    transition: all .3s ease-out;
-    user-select: none;
-}
-.menu.openedTopPanel{
-    border-radius: 0;
-}
-.menu .btnContainer{
-    z-index: 10;
-    width: 2.5rem;
-    aspect-ratio: 1 / 1;
-    position: relative;
-}
-.menu .btnContainer:hover{
-    z-index: 9;
-}
-.menu button{
-    z-index: 10;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.125rem;
-    color: var(--icon-color);
-    background: var(--bg-color-tag);
-    border-radius: .5rem;
-    transition: all .1s ease-out;
-    cursor: pointer;
-    position: relative;
-}
-.menu button:hover{
-    color: var(--font-color);
-    box-shadow: var(--box-shadow-tag-hover);
-}
-.menu button:active{
-    color: var(--font-color-soft);
-}
-.menu svg{
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.menu button.close svg{
-    width: 1.5rem;
-    height: 1.5rem;
-}
-.menu button.close:hover{
-    background: var(--bg-color-button-red);
-}
-
 .selectorPanel{
     width: 10rem;
     position: absolute;
     right: calc(100% + .5rem);
-    top: calc(-.5rem - 2px);
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: .5rem;
     padding: .5rem 0 .5rem .5rem;
     border-radius: .5rem 0 0 .5rem;
     background: var(--bg-color);
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     border-right: 0;
+    animation: appearence .2s;
+}
+@keyframes appearence{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .selectorPanel .conector{
-    width: .5rem;
+    width: 1rem;
     height: 100%;
     position: absolute;
     right: -.5rem;
@@ -171,22 +121,19 @@
     width: 1rem;
     height: 1rem;
     background: transparent;
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     position: absolute;
-    right: 0;
+    right: .5rem;
 }
 .selectorPanel::before{
-    bottom: calc(-1rem - 2px);
-    border-width: 2px 2px 0 0;
+    bottom: calc(-1rem - 1px);
+    border-width: 1px 1px 0 0;
     border-top-right-radius: .5rem;
     box-shadow: .5rem -.5rem 0 .5rem var(--bg-color);
 }
 .selectorPanel::after{
-    top: calc(-1rem - 2px);
-    border-width: 0 2px 2px 0;
+    top: calc(-1rem - 1px);
+    border-width: 0 1px 1px 0;
     border-bottom-right-radius: .5rem;
     box-shadow: .5rem .5rem 0 .5rem var(--bg-color);
-}
-.menu.openedTopPanel .selectorPanel::after{
-    content: none;
 }

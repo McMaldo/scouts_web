@@ -8,7 +8,7 @@ import './assets/vars.css';
 import MainLayout from "./layout/main/MainLayout";
 
 // Pages
-import Landing from './page/landing/Landing';
+const Landing = lazy(() => import('./page/landing/Landing'));
 const Calendar = lazy(() => import('./page/calendar/Calendar'));
 const Rover = lazy(() => import('./page/rover/Rover'));
 import Error from './page/error/Error';
@@ -21,8 +21,11 @@ createRoot(document.getElementById('root')).render(
 		<StrictMode>
 			<Routes>
 				<Route path="/scouts_web/" element={<MainLayout/>}>
-					<Route path="/scouts_web/" element={<Landing/>}/>
-					<Route path="/scouts_web/landing" element={<Landing/>}/>
+					<Route path="/scouts_web/" element={
+						<Suspense fallback={<Loading/>}>
+							<Landing/>
+						</Suspense>
+					}/>
 					<Route path="/scouts_web/calendario" element={
 						<Suspense fallback={<Loading/>}>
 							<Calendar/>

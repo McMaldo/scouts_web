@@ -63,6 +63,9 @@
 .rover .project .desc{
 	padding: 1.5rem .5rem .5rem .5rem;
 }
+.rover .project .desc p{
+	color: var(--icon-color);
+}
 .rover .project .stepList{
 	width: 100%;
 	display: grid;
@@ -79,9 +82,12 @@
 	flex-direction: column;
 	align-items: center;
 }
+.rover .project .stepList .step:first-child{
+	justify-content: center;
+}
 .rover .project .stepList .step ul{
 	padding-left: 1.25rem;
-	justify-self: end;
+	color: var(--icon-color);
 }
 .rover .project .stepList .stepNumber{
 	width: 3rem;
@@ -139,7 +145,7 @@
 .rover .bento{
 	width: 100%;
 	max-width: 600px;
-	align-self: center;
+	justify-self: center;
 	aspect-ratio: 2 / 1;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);

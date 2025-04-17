@@ -5,7 +5,6 @@ import { useTheme } from "../../hook/useTheme";
 
 import Header from "../../component/header/Header";
 import Footer from "../../component/footer/Footer";
-import Menu from "../../component/menu/Menu";
 import Sidebar from "../../component/sidebar/Sidebar";
 
 export default function MainLayout() {
@@ -28,7 +27,6 @@ export default function MainLayout() {
 				</div>
 			</main>
 			<Footer/>
-			<Menu/>
 		</div>
 	);
 }
