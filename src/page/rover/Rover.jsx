@@ -1,7 +1,9 @@
 import React from 'react';
 import s from './rover.module.css';
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Bento from '../../component/bento/Bento';
 
 export default function Rover() {
 	const stepList = [
@@ -118,24 +120,11 @@ export default function Rover() {
 			</section>
 			<section id="LibrodeOro">
 				<h3>Libro de Oro</h3>
-				<div className={s.bento+" "+s.model_4x3}>
-					<article></article>
-					<article></article>
-					<article></article>
-					<article></article>
-					<article><FontAwesomeIcon icon={faArrowRight}/></article>
-				</div>
-				{/* <div className={s.bento+" "+s.model_1}>
-					<article></article>
-					<article></article>
-					<article></article>
-				</div>
-				<div className={s.bento+" "+s.model_2}>
-					<article></article>
-					<article></article>
-					<article></article>
-					<article></article>
-				</div> */}
+				<Bento content={["","","","",
+					<Link to="/scouts_web/libro">
+						<FontAwesomeIcon icon={faArrowRight}/>
+					</Link>
+				]}/>
 			</section>
 		</div>
 	)

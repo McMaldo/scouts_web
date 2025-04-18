@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./sidebar.css";
-import { faCalendar, faDiamond, faHome, faXmark, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faDiamond, faHome, faXmark, faMoon, faSun, faBook } from "@fortawesome/free-solid-svg-icons";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useTheme } from "../../hook/useTheme";
 import { ThemePanel, LangPanel} from "../menu/Menu";
@@ -11,7 +11,7 @@ export default function Sidebar({ isSidebarOpened, setIsSidebarOpened }) {
 	
 	let [panelOpened, setPanelOpened] = useState("");
 	
-	let { theme, setTheme } = useTheme();
+	let { theme } = useTheme();
 	let themeIcons = {
 		dark: faMoon,
 		light: faSun,
@@ -45,6 +45,9 @@ export default function Sidebar({ isSidebarOpened, setIsSidebarOpened }) {
 				</Link>
 				<Link to="/scouts_web/rover">
 					<FontAwesomeIcon icon={faDiamond}/> Rovers
+				</Link>
+				<Link to="/scouts_web/libro">
+					<FontAwesomeIcon icon={faBook}/> Libro de Oro
 				</Link>
 			</section>
 			<section>
