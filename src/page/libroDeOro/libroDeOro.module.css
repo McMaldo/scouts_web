@@ -1,0 +1,34 @@
+.heading{
+    font-size: 2.25em;
+    color: var(--font-color);
+    position: relative;
+}
+.heading::after,
+.heading::before{
+    content: "";
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background: var(--font-color-soft);
+    animation: init ease-in-out .4s;
+}
+.heading::before{
+    top: 0;
+}
+.heading::after{
+    bottom: -.125em;
+}
+@keyframes init{
+    0%{
+        width: 10%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@media(max-width: 530px){
+    .heading{
+        font-size: 1.675em;
+    }
+}

@@ -5,7 +5,7 @@ export default function Bento({content}) {
 
 	const length = content.length;
 
-	if(length < 3) return "Error, Bento must contains upper to 3 elements";
+	if(length > 5) return "Error, Bento must contains less than 6 elements";
 
 	const slots = (length) => {
 		switch (length) {
@@ -15,6 +15,8 @@ export default function Bento({content}) {
 				return css.slots_4;
 			case 3:
 				return css.slots_3;
+			case 2:
+				return css.slots_2;
 			default:
 				break;
 		}
@@ -24,7 +26,8 @@ export default function Bento({content}) {
 		<div className={css.bento+" "+slots(length)}>
 			{content.map((item, index) => (
 				<article key={index}>
-					{item}
+					{item.img ? <img src={"/scouts_web/"+item.img} alt="" /> : 
+					item ? item : ""}
 				</article>
 			))}
 		</div>

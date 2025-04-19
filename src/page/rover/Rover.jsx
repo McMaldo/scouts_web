@@ -120,8 +120,13 @@ export default function Rover() {
 			</section>
 			<section id="LibrodeOro">
 				<h3>Libro de Oro</h3>
-				<Bento content={["","","","",
+				<Bento content={[
+					{img:"img/libroDeOro/IMG-20250119-WA0001.jpg"},
+					{img:"img/libroDeOro/IMG-20250120-WA0013.jpg"},
+					{img:"img/libroDeOro/IMG-20250119-WA0148.jpg"},
+					{img:"img/libroDeOro/IMG-20250119-WA0141.jpg"},
 					<Link to="/scouts_web/libro">
+						<img src="/scouts_web/img/libroDeOro/IMG-20250119-WA0138.jpg" alt="" />
 						<FontAwesomeIcon icon={faArrowRight}/>
 					</Link>
 				]}/>
