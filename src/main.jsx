@@ -11,7 +11,7 @@ import MainLayout from "./layout/main/MainLayout";
 const Landing = lazy(() => import('./page/landing/Landing'));
 const Calendar = lazy(() => import('./page/calendar/Calendar'));
 const Rover = lazy(() => import('./page/rover/Rover'));
-import LibroDeOro from './page/libroDeOro/LibroDeOro';
+const LibroDeOro = lazy(() => import('./page/libroDeOro/LibroDeOro'));
 import Error from './page/error/Error';
 
 // Component
@@ -37,7 +37,11 @@ createRoot(document.getElementById('root')).render(
 							<Rover/>
 						</Suspense>
 					}/>
-					<Route path="/scouts_web/libro" element={<LibroDeOro/>}/>
+					<Route path="/scouts_web/libro" element={
+						<Suspense fallback={<Loading/>}>
+							<LibroDeOro/>
+						</Suspense>
+					}/>
 				</Route>
 				<Route path='*' element={<Error/>}/>
 			</Routes>
